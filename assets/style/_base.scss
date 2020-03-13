@@ -19,12 +19,12 @@ html {
 
   body {
     background-color: white;
+    background: linear-gradient(180deg, lighten($color: #0402E0, $amount: 20), darken($color: #0402E0, $amount: 30));
     font-size: $font_base_size;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     line-height: 1.65;
     color: #333;
-    width: 100vw;
   }
   
   p {margin-bottom: 1.15rem;}
@@ -39,52 +39,76 @@ html {
   h1 {
   margin-top: 0;
   font-size: 5.653rem;
+
+    @media screen and (max-width: 22em) {
+      font-size: (5.653rem/2);
+    }
   }
 
-  h2 {font-size: 3.998rem;}
+  h2 {font-size: 3.998rem;
+    @media screen and (max-width: 22em) {
+      font-size: (3.998rem/2);
+    }
+  }
 
-  h3 {font-size: 2.827rem;}
+  h3 {font-size: 2.827rem;
+    @media screen and (max-width:22em) {
+      font-size: (2.827rem/2);
+    }
+  }
 
-  h4 {font-size: 1.999rem;}
+  h4 {font-size: 1.999rem;
+    @media screen and (max-width:22em) {
+      font-size: (1.999rem/2);
+    }
+  }
 
-  h5 {font-size: 1.414rem;}
+  h5 {font-size: 1.414rem;
+    @media screen and (max-width:22em) {
+      font-size: (1.414rem/2);
+    }
+  }
 
   small, .text_small {font-size: 0.707rem;}
 
   nav {
     height: 5em;
+    padding: 1.6rem;
     background-color: #0402E0;
-    // z-index: 20;
-    width: 100vw;
 
   }
 
 
   .container {
-    // background-image: url('~assets/img/SVG/Asset10.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: grid;
-    grid-template-rows: minmax(min-content, 62em) 1fr;
+    position: relative;
+    // background-color: #0C73D3;
+    // background: linear-gradient(180deg, lighten($color: #0402E0, $amount: 20), darken($color: #0402E0, $amount: 30));
+    // height: 100vh;
 
-    @media screen and (max-width: 34.375em) {
-      grid-template-rows: 1fr 1fr;
+    &__content {
+      color: lighten($color: #02B7EB, $amount: 30);
+      z-index: 10;
+      position: relative;
+      display: grid;
+      grid-template-rows: 100vh auto;
+      grid-template-columns: 1fr 80vw 1fr;
     }
 
     &__hero{
-      position: relative;
-      background-color: darken($color: #0C73D3, $amount: 30);
-      background: linear-gradient(180deg, lighten($color: #0402E0, $amount: 20), darken($color: #0402E0, $amount: 30));
+      grid-column: 2 / 3;
+      display: flex;
+      // align-content: center;
+      justify-content: center;
+      align-items: center;
 
-
-
+      & h1 {
+        text-align: center;
+      }
     }
 
-    &__content {
-      background-color: #0C73D3;
-      background: linear-gradient(180deg, darken($color: #0402E0, $amount: 30), darken($color:#0C73D3, $amount: 50));
-      padding: 0 1.6rem;
-      color: lighten($color: #02B7EB, $amount: 30);
+    &__main{
+      // background-color: #0C73D3;
+      grid-column: 2 / 3;
     }
   }
 
@@ -92,12 +116,23 @@ html {
 
     .asset9 {
       @extend %asset;
-      bottom: 0;
+      bottom: 28%;
       z-index: 2;
       height: 5.29rem*2;
       width: 12.52rem*2;
       background-image: url('~assets/img/SVG/Asset9.svg');
       background-position-y: bottom;
+
+      @media screen and (max-width: 56.25em) {
+        bottom: 35%;
+      }
+
+
+
+      @media screen and (max-width: 39.375em) {
+        bottom: 43%;
+      }
+
       @media screen and (max-width: 34.375em) {
         height: 5.29rem;
         width: 12.52rem;
@@ -114,30 +149,44 @@ html {
       height: 15.67rem*2;
       background-image: url('~assets/img/SVG/Asset8.svg');
       background-position-y: top;
+
+      // @media screen and (max-width: 22em) {
+      //   left: 0;
+      // }
+
       @media screen and (max-width: 34.375em) {
         width: 18.68rem; 
         height: 15.67rem;
       }
+
     }
 
     .asset7 {
       @extend %asset;
-      bottom: 0;
+      bottom: 28%;
       // right: 50%;
       z-index: 2;
       height: 6.9rem*2;
       width: 7.22rem*2;
       background-image: url('~assets/img/SVG/Asset7.svg');
       background-position-y: bottom;
+      @media screen and (max-width: 56.25em) {
+        bottom: 35%;
+      }
+
+      @media screen and (max-width: 39.375em) {
+        bottom: 43%;
+      }
+
       @media screen and (max-width: 34.375em) {
-        height: 6.9rem;
-        width: 7.22rem;
+        height: 5.29rem;
+        width: 12.52rem;
       }
     }
 
     .asset6 {
       @extend %asset;
-      bottom: 14.557534rem;
+      bottom: 50%;
       left: 50%;
       z-index: 2;
       height: 1.94rem*2;
@@ -157,8 +206,14 @@ html {
       width: 17.03rem*2;
       background-image: url('~assets/img/SVG/Asset5.svg');
       background-position-y: top;
+
       @media screen and (max-width: 34.375em) {
         height: 13.40rem;
         width: 17.03rem;
       }
+      @media screen and (max-width: 37.5em){
+        height: 26.8rem*.95;
+        width: 34.06rem*.95; 
+      }
+
     }
