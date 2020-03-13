@@ -1,0 +1,9 @@
+$font_base_size: 1rem;
+
+%asset {
+  position: absolute;
+  background-blend-mode: multiply;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: .5;
+}
