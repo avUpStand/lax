@@ -1,4 +1,6 @@
 $font_base_size: 1rem;
+$font_xsmall:0.707rem;
+$font_small: $font_xsmall;
 
 %asset {
   position: absolute;
@@ -6,4 +8,8 @@ $font_base_size: 1rem;
   background-size: contain;
   background-repeat: no-repeat;
   opacity: .5;
+}
+
+%center {
+  margin: 0 auto;
 }

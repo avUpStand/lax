@@ -81,33 +81,45 @@ html {
 
   .container {
     position: relative;
-    // background-color: #0C73D3;
-    // background: linear-gradient(180deg, lighten($color: #0402E0, $amount: 20), darken($color: #0402E0, $amount: 30));
-    // height: 100vh;
 
     &__content {
       color: lighten($color: #02B7EB, $amount: 30);
       z-index: 10;
       position: relative;
       display: grid;
-      grid-template-rows: 100vh auto;
+      grid-template-rows: 90vh auto;
       grid-template-columns: 1fr 80vw 1fr;
     }
 
     &__hero{
       grid-column: 2 / 3;
       display: flex;
-      // align-content: center;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      padding-top: 30rem;
+      justify-content: space-between;
 
       & h1 {
         text-align: center;
+        text-transform: capitalize;
+        @extend %center;
+
+      }
+
+      & span {
+        text-align: center;
+        @extend %center;
+        animation: bounce 1s both infinite;
+        color: #02E0D6;
+        font-weight: bold;
+        border:solid .1rem #02E0D6;
+        padding: (1.6rem/3) 1.6rem;
+        font-size: $font_small;
+        text-transform: uppercase;
+
       }
     }
 
     &__main{
-      // background-color: #0C73D3;
       grid-column: 2 / 3;
     }
   }
@@ -116,7 +128,7 @@ html {
 
     .asset9 {
       @extend %asset;
-      bottom: 28%;
+      bottom: 22%;
       z-index: 2;
       height: 5.29rem*2;
       width: 12.52rem*2;
@@ -130,7 +142,7 @@ html {
 
 
       @media screen and (max-width: 39.375em) {
-        bottom: 43%;
+        bottom: 40%;
       }
 
       @media screen and (max-width: 34.375em) {
@@ -150,10 +162,6 @@ html {
       background-image: url('~assets/img/SVG/Asset8.svg');
       background-position-y: top;
 
-      // @media screen and (max-width: 22em) {
-      //   left: 0;
-      // }
-
       @media screen and (max-width: 34.375em) {
         width: 18.68rem; 
         height: 15.67rem;
@@ -163,8 +171,7 @@ html {
 
     .asset7 {
       @extend %asset;
-      bottom: 28%;
-      // right: 50%;
+      bottom: 22%;
       z-index: 2;
       height: 6.9rem*2;
       width: 7.22rem*2;
@@ -175,7 +182,7 @@ html {
       }
 
       @media screen and (max-width: 39.375em) {
-        bottom: 43%;
+        bottom: 40%;
       }
 
       @media screen and (max-width: 34.375em) {
@@ -217,3 +224,9 @@ html {
       }
 
     }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+      40% {transform: translateY(-30px);} 
+      60% {transform: translateY(-15px);} 
+   } 
