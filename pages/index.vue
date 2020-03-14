@@ -3,6 +3,7 @@
     <section class="container__content">
     <div class="container__hero">
       <h1>Lorem, ipsum.</h1>
+      <span>scroll down</span>
     </div>
     <div class="container__main">
       <h2>Lorem, ipsum dolor.</h2>
